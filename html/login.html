@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /*뷰포트 높이를 100으로 지정 */
+            margin: 0;
+        }
+        fieldset {
+            text-align: center;
+            width: 250px;
+            height: 310px;
+        }
+        button, input {
+            width: 200px;
+            height: 40px;
+            margin: 10px;
+        } 
+        input {
+            background-color: rgba(240, 239, 239, 0.918);
+            border: none;
+        }
+        button {
+            align-items: center; /* 세로 방향으로 중앙 정렬 */
+            justify-content: center; /* 가로 방향으로 중앙 정렬 */
+        }
+        #google {
+            margin-top: 20px;
+            background-color: white;
+        }
+        #google img {
+            position: relative; /* 기본 위치에 대한 상대적 위치로 이동*/
+            top: 2.5px; /* 아래로 2.5px 이동*/
+        }
+        #login {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <button type="submit" id="google">
+            <img src="../img/google_logo.png" alt="google logo image" width="15">
+            Log in with Google
+        </button><br>
+        <div>
+            <strong>or</strong>
+        </div>
+        <input type="text" id="userid" placeholder="  Username"><br>
+
+        <input type="password" id="userid" placeholder="  Password"><br>
+        <button type="submit" id="login">Login</button><br>
+        <div>
+            Forget your password?
+        </div><br>
+    </fieldset>
+    
+</body>
+</html>
