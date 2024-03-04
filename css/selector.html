@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자 적용하기</title>
+    <style>
+        * {
+         color: blue;
+        }
+        #tag-selector {
+            color: red;
+        }
+        .class-selector {
+            color:blueviolet
+        }
+        a[href] {
+            color: aqua;
+            display: block;
+        }
+        a[target="_blank"] {
+            color: burlywood;
+        }
+        h2, h3 {
+            color: chartreuse;
+        }
+        div p {
+            color: cornflowerblue;
+        }
+        h4 + h5 {
+            color: brown;
+        }
+        a:visited{
+            color: orange;
+        }
+        p:hover {
+            color:crimson
+        }
+        p:active {
+            color:cadetblue;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>전체 선택자: * {css 코드}</h1>
+    <p>전체 선택자는 모든 요소를 한 번에 선택할 수 있습니다.</p>
+    <h2> 전체 선택자 이후 태그 선택자로 태그별로 별개의 스타일 적용이 가능합니다. </h2>
+    <p id="id-selector"> 아이디 선택자: #id 속성값 {css 코드}</p>
+    <p class="class-selector"> 클래스 선택자: .class 속성값 {css 코드}</p>
+    <a href="###">기본 속성 선택자: a[href] {css 코드}</a>
+    <a href="###" target="_blank"> a 태그의 target 속성값이 _blank인 요소에 적용: a[target="_blank"]</a>
+    <h3>그룹 선택자: h2, h3 {css 코드}</h3>
+    <div>
+        <p>하위 선택자: 선택자1(div) 선택자2(p) {css 코드}</p>
+        <p>p태그 내용1</p>
+        <p>p태그 내용2</p>
+    </div>
+    <h4>인접 형제 선택자: 이전 선택자 + 대상 전택자 {css 코드}</h4>
+    <h5>인접 형태 선택자의 대상 선택자: h5</h5>
+    <a href="##">한 번도 방문하지 않은 링크일 때: a:link {css 코드}, 방문한 링크일 때: a:visited {css 코드}</a>"
+    <p>요소에 마우스를 올리면 해당 태그가 선택자로 지정: p:hover {css 코드}</p>
+    <p>요소를 마우스로 클릭하고 있는 동안 해당 태그가 선택자로 지정: p:active {css 코드}</p>
+</body>
+</html>
