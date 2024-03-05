@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경 적용하기</title>
+    <style>
+        body {
+            height: 900px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .parent {
+            width: 500px;
+            height: 500px;
+            border: 20px solid black;
+            text-align: center;
+
+        }
+        .children {
+            position: relative; /*다른 위치의 기준이 됨.*/
+            height: 500px;
+            background-image: url('../img/eimyt_logo.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-attachment: scroll;
+        }
+        .children p {
+            position: absolute; /*children 영역을 기준으로 상대적 위치를 지정함.*/
+            bottom: 20%;
+            width: 100%;
+            font-family: cursive;
+            font-size: 30px;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.637);
+    
+        }
+        p {
+            font-family: cursive; /*필기체*/
+            font-size: 20px;
+            font-weight: bold;
+            color: rgba(15, 31, 253, 0.377);
+        }
+        a:visited {
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="children">
+            <p>
+                Follow us
+            </p>
+        </div>
+        <p>
+            <a href="https://eimyt.com/?fbclid=PAAabkzAPgA8EilAD5DmyWj3bUvQOST9FixSyHOEDboptHUFDvSurGzSGGC8o">Come visit our website! </a>
+        </p>
+    </div> 
+
+    
+</body>
+</html>
