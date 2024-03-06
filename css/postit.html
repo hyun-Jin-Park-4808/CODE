@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포스트잇 만들기</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+    #postit{
+        position: absolute;
+        left: 100px;
+        top: 100px;
+        background-color: #ff9;
+        padding: 18px;
+        text-align: center;
+        width: 333px;
+        height: 333px;
+        font-family: "Nanum Pen Script", cursive;
+    }
+    #postit:hover{
+        transform: rotate(15deg);
+    }
+    #postit h1{
+        font-size: 44px;
+        margin-bottom: 20px;
+    }
+    #postit p{
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+    </style>
+
+</head>
+<body>
+    <div id="postit">
+        <h1>포스트잇 회전하기</h1>
+        <p>구글 폰트를 import해왔습니다.</p>
+        <p>position: absolute를 사용해 포스트잇의 위치를 지정해줬습니다.</p>
+        <p>#postit:hover {}를 사용해 커서를 가져다 되면 포스트잇이 회전하도록 만들었습니다. </p>
+    </div>
+</body>
+</html>
