@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google login page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        *{ /*웹 브라우저 기본 스타일 시트 초기화, 레이아웃 계산 간소화하기 위함.*/
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: "Roboto", sans-serif;
+        }
+        #login{
+            width: 304px;
+            height: 390px;
+            padding: 28px 38px; /*폼 안에서 내부 여백(상하:28px, 좌우:38px) wlwjd */
+            border: 1px solid #000;
+            margin: 100px auto; /*요소 외부의 상하 여백 100px, 좌우여백 자동설정 => 수평 방향에서 중앙에 위치*/
+        }
+        #login fieldset {
+            border: none; /*fieldset의 기본 테두리 삭제*/
+        }
+        #login fieldset legend {
+            position: absolute;
+            top: -99999px;
+        }
+        #login button{
+            width: 228px;
+            height: 44px;
+            border: 1px solid #000;
+            background-color: white;
+            font-weight: bold;
+        }
+        #login input{
+            width: 228px;
+            height: 44px;
+            border: 1px solid #000;
+            padding: 0 10px; /*내부 여백*/
+            margin-bottom: 21px; /*외부 여백*/
+            background-color: #eaeaea;
+        }
+        #login > fieldset + p { /*id가 login인 요소의 자식 중 fieldset 요소 바로 뒤에 오는 p 태그 선택: or 부분 선택*/
+            margin: 24px 0; /*요소의 상하여백 24px, 좌우 여백 0*/
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+        }
+        #login button[type='submit']{
+            background-color: #373f3c;
+            color: white;
+            margin-bottom: 27px; /*로그인 버튼 form 박스 바닥에서부터 27px 떨어진 곳에 위치*/
+            font-weight: normal;
+        }
+        #login a{
+            text-decoration: none;
+            color: #2c3432;
+            font-size: 14px;
+            text-align: center;
+            display: block; /*중앙 정렬*/
+        }
+        #google img {
+            position: relative; /* 기본 위치에 대한 상대적 위치로 이동*/
+            top: 2.5px; /* 아래로 2.5px 이동*/
+        }
+
+    </style>
+</head>
+<body>
+    <form action="#" id="login">
+        <fieldset>
+            <legend>소셜 로그인</legend> <!-- 웹 전근성을 위해 legend 태그를 사용했지만, 디자인에는 필요 없는 구성 요소이므로, 화면 밖으로 이동-->
+            <button type="button" id="google">
+                <img src="../img/google_logo.png" alt="구글 로고"  width="15">
+                Log in with Google
+            </button>
+        </fieldset>
+        <p>or</p>
+        <fieldset>
+            <legend>일반 로그인</legend>
+            <label for="username"> <!--사용자의 웹 접근성 향상을 위해 붙임. -->
+                <input type="text" id="username" name="username" placeholder="Username"> <!--id:html, js에서 사용, name: 서버에서 필드 식별 위해 사용-->
+            </label>
+            <label for="password"> 
+                <input type="password" id="password" name="password" placeholder="Password">
+            </label>
+            <button type="submit">
+                Login
+            </button>
+        </fieldset>
+        <a href="#">Forget your password?</a>
+    </form>
+
+</body>
+</html>
