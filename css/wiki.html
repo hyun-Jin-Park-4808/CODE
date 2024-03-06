@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    a{
+        color:#0645ad;
+    }
+    .list{
+        width: 336px;
+        height: 265px;
+        background-color: #f8f9fa;
+        border: 1px solid #a2a9b1;
+        padding: 6px 5px; /*div 박스 내부 여백 상하 6px, 좌우 5px씩 띄움*/
+        margin: 20px auto;
+    }
+    .list h1{
+        font-size: 13px;
+        text-align: center;
+    }
+    .list ol li{
+        list-style: none;
+        font-size: 13px;
+    }
+    .list ol li a{
+        text-decoration: none;
+        height: 21px;
+        display: inline-block; /*a태그는 박스 모델이 인라인 성격이라 height 속성이 적용되지 안기 때문에 inline-block으로 지정하고 height 속성 지정*/
+    }
+    .list ol li ol{
+        margin-left: 26px; /*목록 들여쓰기*/
+    }
+
+    </style>
+</head>
+<body>
+    <div class="list">
+        <h1>목차</h1>
+        <ol>
+            <li><a href="#">1 역사</a>
+            <ol>
+                <li><a href="#">1.1 개발</a></li>
+                <li><a href="#">1.2 최초 규격</a></li>
+                <li><a href="#">1.3 표준 버전의 역사</a></li>
+                <ol>
+                    <li><a href="#">1.3.1 HTML 버전 스케줄</a></li>
+                    <li><a href="#">1.3.2 HTML 초안 버전 스케줄</a></li>
+                    <li><a href="#">1.3.3 XHTML 버전</a></li>
+                </ol>
+            </ol>
+            </li>
+            <li><a href="#">2 마크업</a>
+            <ol>
+                <li><a href="#">2.1 HTMl 요소</a></li>
+                <li><a href="#">2.2 데이터 형식</a></li>
+                <li><a href="#">2.3 문서 형식 선언</a></li>
+            </ol>
+        </li>
+        </ol>
+    </div>
+</body>
+</html>
