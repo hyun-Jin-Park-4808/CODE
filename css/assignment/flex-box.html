@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Box 실습</title>
+    <style>
+        .flex-container{
+            width: 500px;
+            height: 490px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap; /*flew-flow: row wrap 처럼 작성해도 된다!*/
+            justify-content: space-between;
+            align-content: space-between;
+        }
+        .flex-item{
+            width: 160px;
+            height: 240px;
+            background-image: url('../../img/eimyt_logo.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="flex-item"></div>
+        <div class="flex-item"></div>
+        <div class="flex-item"></div>
+        <div class="flex-item"></div>
+        <div class="flex-item"></div>
+        <div class="flex-item"></div>
+    </div>
+    
+</body>
+</html>
