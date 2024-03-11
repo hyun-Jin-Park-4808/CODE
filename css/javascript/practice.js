@@ -25,5 +25,5 @@ console.log(empty); // null
 
 // 배열, 객체 리터럴 
 let array = ['abc', 10, true, undefined, null, [], {}, function(){}]; // 배열은 모든 자료형을 정의할 수 있습니다. 
-let literal = {name:이름, email:이메일}; // 객체 리터럴은 객체를 정의하는 가장 간단한 방법으로, 객체를 정의할 때 중괄호 안에 키와 값의 한 쌍으로 이뤄진 속성이 들어간다.
+let literal = {name:`이름`, email:`이메일`}; // 객체 리터럴은 객체를 정의하는 가장 간단한 방법으로, 객체를 정의할 때 중괄호 안에 키와 값의 한 쌍으로 이뤄진 속성이 들어간다.
 console.log(literal.name); // 이름
