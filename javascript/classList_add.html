@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style add by classList</title>
+    <style>
+        .red-color{ /* 클래스 속성값만 따로 정의 */
+            color:red;
+        }
+        .fz20{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <p id="text">text</p>
+    <script>
+        const pEl = document.querySelector("#text"); // 노드 선택하기 
+        pEl.classList.add("red-color"); // 선택한 노드에 css 속성값 추가 
+        pEl.classList.add("fz20");
+        // pEl.classList.add("red-color", "fz20"); 이런식으로 한 번에 적용해도 됨. 
+        pEl.classList.remove("red-color", "fz20"); // css 속성값 삭제 
+        setInterval(function() {
+            pEl.classList.toggle("red-color");
+        }, 1000); // 텍스트 색상이 1초에 한번씩 빨간색으로 변경됨. 
+
+    </script>
+    
+</body>
+</html>

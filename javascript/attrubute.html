@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute</title>
+    <style>
+        .red-color{
+            color:red;
+        }
+        .fz20{
+            font-size: 20px;
+        }
+        .blue-color{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <a id="goggle" href="https://www.google.com/webhp?hl=ko&sa=X&ved=0ahUKEwiXwpT-7On_AhXPEYgKHfTiDpUQPAgI" class="red-color">구글</a>
+    <a id="aId" href="#" class="fz20">link</a>
+    <a id="aId2" href="##" class="fz20">link2</a>
+    <script>
+        const aEl = document.querySelector("#goggle");
+        const href = aEl.getAttribute("href"); // href 속성값을 가져옴. 
+        aEl.setAttribute("href", "https://www.naver.com"); // 속성값 설정
+        aEl.innerText = "네이버";
+        aEl.setAttribute("target", "_blank"); // 새 창으로 열리게 하기 
+        aEl.removeAttribute("class"); // class 속성 삭제
+
+        // classList.add()는 기존 요소가 가지고 있던 class 속성값을 보존하면서 속성을 추가
+        const aIdEl = document.querySelector("#aId");
+        aIdEl.classList.add("red-color"); // <a id="aId" href="#" class="fz20 red-color">link</a>
+
+        // setAttribute()는 기존 class 속성값인 "fz-20"을 보존하지 않고 아예 새로운 속성값으로 설정됨. 
+        const aId2El = document.querySelector("#aId2");
+        aId2El.setAttribute("class", "blue-color"); // <a id="aId2" href="##" class="blue-color">link2</a>
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Set</title>
+</head>
+<body>
+    <button data-cnt="10">가방 구매</button> <!-- data-* 속성은 사용자가 원하는 속성을 추가할 수 있게 하는 사용자 정의 속성이빈다. -->
+    <button data-cnt="0">신발 구매</button>
+    <script>
+        const buttonEls = document.querySelectorAll("button");
+        buttonEls.forEach((el) => {
+            console.log(el.dataset); // dataset으로 data-cnt 속성 정보 출력 
+        })
+        // DOMStringMap {cnt: '10'}
+        // DOMStringMap {cnt: '0'}
+        buttonEls.forEach((el) => {
+            console.log(el.dataset.cnt); // 10 0
+        })
+    </script>
+    
+</body>
+</html>

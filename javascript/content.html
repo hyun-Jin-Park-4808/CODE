@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="title">
+        Hello,
+        <span style="display: none;">
+        Javascript!</span>
+    </p>
+    <script>
+        const textContent = document.getElementById("title").textContent;
+        console.log(textContent); // Hello, Javascript!
+        const innerText = document.getElementById("title").innerText;
+        console.log(innerText); // Hello,
+        const innerHTML = document.getElementById("title").innerHTML;
+        console.log(innerHTML); 
+        // Hello,
+        // <span style="display: none;">
+        // Javascript!</span>
+    </script>
+</body>
+</html>

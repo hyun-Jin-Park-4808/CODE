@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS selector for Node</title>
+</head>
+<body>
+    <div class="box-1">
+        <p class="text">text-1</p>
+        <p class="text">text-2</p>
+    </div>
+    <div class="box-2">
+        <p class="text">text-3</p>
+        <p class="text">text-4</p>
+    </div>
+    <script>
+        const el = document.querySelector(".box-1");
+        console.log(el);
+        // <div class="box-1">
+        //     <p class="text">text-1</p>
+        //     <p class="text">text-2</p>
+        // </div>
+        
+        // class 속성값이 box-1인 요소의 하위에 있는 p태그 가져오기 
+        const pEl = document.getElementsByClassName("box-1")[0].children; // children = 자식 요소 노드를 반환, 요소 노드 = h1, p 태그와 같은 요소의 노드 타입
+        console.log(pEl); // HTMLCollection(2) [p.text, p.text]
+
+        const nodeList = document.querySelectorAll(".box-1 .text"); // class 속성값이 box-1인 요소와 text인 요소 가져오기 => NodeList로 가져와짐. 
+        console.log(nodeList); // NodeList(2) [p.text, p.text]
+
+    </script>
+</body>
+</html>
