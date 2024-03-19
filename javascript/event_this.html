@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 객체와 this</title>
+</head>
+<body>
+    <button id="bt1">클릭하면 마우스가 클릭된 좌표들을 보여줍니다.</button>
+
+    <form>
+        <input type="text"> <!-- 키보드 누르면 발생하는 이벤트 다루기 위함 -->
+    </form>
+
+    <!-- 이벤트 취소하기-->
+    <a href="https://www.naver.com">네이버 이동</a>
+    <a href="https://www.daum.net">다음 이동</a>
+
+    <!-- this 키워드 사용하기 -->
+    <p>text-1</p>
+    <p>text-2</p>
+    <p>text-3</p>
+
+    <!-- this 키워드의 target 속성 사용하기 -->
+    <p class="target">target-1</p>
+    <p class="target">target-2</p>
+    <p class="target">target-3</p>
+
+</body>
+
+<script>
+    const btnEl = document.querySelector("button");
+    btnEl.addEventListener("click", function(event) { // 이벤트 객체를 매개변수로 받으면 이벤트 객체를 활용할 수 있다.
+        console.log(`clientX:${event.clientX}`); // 마우스가 클릭된 X좌표(수평 스크롤 포함 안됨)
+        console.log(`clientY:${event.clientY}`); // 마우스가 클릭된 Y좌표(수평 스크롤 포함 안됨)
+        console.log(`pageX:${event.pageX}`); // 마우스가 클릭된 X좌표(수평 스크롤 포함)
+        console.log(`pageY:${event.pageY}`); // 마우스가 클릭된 Y좌표(수평 스크롤 포함)
+        console.log(`screenX:${event.screenX}`); // 모니터의 왼쪽 위 모서리를 기준으로 마우스가 클릭된 X좌표 
+        console.log(`screenY:${event.screenY}`); // 모니터의 왼쪽 위 모서리를 기준으로 마우스가 클릭된 Y좌표 
+    })
+
+    const inputEl = document.querySelector("input");
+    inputEl.addEventListener("keydown", function(event) {
+        console.log(`keyCode:${event.keyCode}`); // 키보드에서 눌린 유니코드 값 반환
+        console.log(`ctrlKey:${event.ctrlKey}`); // Ctrl 키 눌렸으면 true, 아니면 false 반환 
+        console.log(`altKey:${event.altKey}`); // Alt 키 눌렸으면 true, 아니면 false 반환 
+        console.log(`shiftKey:${event.shiftKey}`); // Shift 키 눌렸으면 true, 아니면 false 반환 
+    })
+
+    // 이벤트 취소하기
+    const aEls = document.querySelectorAll("a");
+    for(let i = 0; i < aEls.length; i++) {
+        aEls[i].addEventListener("click", function(e) {
+            e.preventDefault(); // 기본 이벤트 취소, 링크 클릭해도 이동 안 한다. 
+        })
+    }
+
+    // this 키워드 사용하기
+    const pEls = document.querySelectorAll("p");
+    pEls.forEach((el) => {
+        el.addEventListener("click", function() {
+            console.log(this); // <p>text-1</p> or <p>text-2</p> or <p>text-3</p>
+            if(this.style.color === 'red') {
+                this.style.color = "black";
+            } else {
+                this.style.color = "red";
+            }
+        }); 
+    })
+
+    // this 키워드를 사용할 때, 화살표 함수로 작성하면 this의 범위가 이벤트 발생 노드가 아닌 window가 되기 때문에, 
+    // 화살표로 작성할 때는 이벤트 객체의 target 속성을 사용해야 한다. 
+    const ptEls = document.querySelectorAll(".target");
+    ptEls.forEach((el) => {
+        el.addEventListener("click", (e) => {
+            console.log(e.target);
+        });
+    })
+
+</script>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form 연습</title>
+</head>
+<body>
+    <form name="frm1">
+        <label for="uname">이름</label> <!-- for 속성의 값은 form 요소의 id와 일치해야 한다. -->
+        <input type="text" id="uname" name="uname"> <!-- id는 문서 내의 유일한 식별자이며, name은 서버에서 해당 데이터를 식별하는 이름이다. -->
+        <label for="age">나이</label>
+        <input type="text" id="age" name="age">
+        <label for="gender">성별</label>
+        <button type="submit">전송</button>
+
+    </form> <!-- 체크 박스 다루기 -->
+    <form name="frm2">
+        <label><input type="checkbox" value="appple">사과</label>
+        <label><input type="checkbox" value="banana">바나나</label>
+        <label><input type="checkbox" value="orange">오렌지</label>
+    </form>
+
+    <!-- 라디오 버튼 다루기 - 빈 동그라미 클릭, 한 개만 선택해야 함! -->
+    <form name="frm3">
+        <label><input type="radio" name="fruits" value="apple">사과</label>
+        <label><input type="radio" name="fruits" value="banana">바나나</label>
+        <label><input type="radio" name="fruits" value="orange">오렌지</label>
+    </form>
+
+    <!-- 콤보 박스 다루기, 아래 삼각 버튼 클릭해서 하나 고르기 -->
+    <form name="frm4">
+        <select>
+            <option value="apple">사과</option>
+            <option value="banana">바나나</option>
+            <option value="orange">오렌지</option>
+        </select>
+    </form>
+
+    <!-- 파일 업로드 요소 다루기 -->
+    <form name="frm5">
+        <input type="file" name="upload">
+    </form>
+
+    <script>
+        console.log(document.frm1.uname); // <input type="text" id="uname" name="uname">
+        console.log(document.frm1.age); // <input type="text" id="age" name="age">
+        document.frm1.uname.value = '원하는 값 할당 가능!';
+
+        const checkboxEls = document.querySelectorAll("[type='checkbox']");
+        for(let i = 0; i < checkboxEls.length; i++) {
+            checkboxEls[i].checked = true; // check box 전부 체크된 상태로 만들기.
+        }
+
+        const radioEls = document.querySelectorAll("[type='radio']");
+        for(let i = 0; i <radioEls.length; i++) {
+            if(radioEls[i].value === 'banana') { // banana에 체크하기 
+                radioEls[i].checked = true;
+            }
+        }
+
+        const optionEls = document.querySelectorAll("option");
+        for(let i = 0; i <optionEls.length; i++) {
+            if(optionEls[i].value === 'banana') {
+                optionEls[i].selected = true;
+            }
+        }
+
+        // 웹 브라우저 실행시켜서 파일 업로드하고, 콘솔창에 아래 스크립트 입력하면 파일 정보 알 수 있다. 
+        // const filesObj = document.frm5.upload.files;
+        // console.log(filesObj); // FileList{0: File, length: 1}
+        // filesObj[0].name; // 파일 이름
+        // filesObj[0].size; // 파일 크기
+        // filesObj[0].type; // 파일 타입
+        // filesObj[0].lastModifiedDate; // 파일 마지막 수정일 
+    </script>
+</body>
+</html>
