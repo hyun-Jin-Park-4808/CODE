@@ -1,0 +1,49 @@
+/* 웹 브라우저의 기본 스타일 시트 초기화 */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a, a:link, a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+.container { /* container 내 div 태그는 기준 너비를 1140px로 유지하는 역할을 한다. */
+    width: 1140px;
+    margin: 0 auto; /* 위, 아래는 0, 왼쪽, 오른쪽은 auto로 설정하면 수평 방향에서 중아에 위치 */
+}
+header {
+    position: absolute; /* 스크롤해서 화면을 내리더라도 항상 상단에 헤더 고정하려면 fixed를 해야하지만 부드럽게 보이려면 자바스크립트 필요해서 일단 absolute로 지정 */
+    color:black;
+    top: 0;
+    z-index: 1; /* 스크롤 했을 때 다른 요소 밑에 가려서 안 보이는 일이 없도록 0보다 크게 해줌. */
+    width: 100%;
+    padding: 1rem;
+}
+header .container { /* 헤더 영역의 메뉴 배치와 관련된 코드 */
+    display: flex; /* 레이아웃 형태를 유지하기 쉽게 flex로 지정 */
+    justify-content: space-between; /* 하위에 자식 태그가 2개 있을 때, 각각 왼쪽 끝, 오른쪽 끝에 붙게 된다. */
+    align-items: center;
+    width: 100%;
+}
+header nav ul { /* 메뉴를 가로 한 줄로 배치하기 위함. */
+    display: flex;
+}
+header nav ul li {
+    padding: 10px;
+}
+header button {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
+header h1 button {
+    font-size: 2rem;
+    font-weight: bold;
+}
+header nav ul li button {
+    font-size: 1.2rem;
+}
