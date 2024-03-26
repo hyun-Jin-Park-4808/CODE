@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Varela+Round&display=swap');
+/* 웹 브라우저의 기본 스타일 시트 초기화 */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a, a:link, a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+
+/* 헤더 영역 */
+.container { /* container 내 div 태그는 기준 너비를 1140px로 유지하는 역할을 한다. */
+    width: 1140px;
+    margin: 0 auto; /* 위, 아래는 0, 왼쪽, 오른쪽은 auto로 설정하면 수평 방향에서 중아에 위치 */
+}
+header {
+    position: fixed; 
+    color:white;
+    top: 0;
+    z-index: 1; /* 스크롤 했을 때 다른 요소 밑에 가려서 안 보이는 일이 없도록 0보다 크게 해줌. */
+    width: 100%;
+    padding: 1rem;
+}
+header .container { /* 헤더 영역의 메뉴 배치와 관련된 코드 */
+    display: flex; /* 레이아웃 형태를 유지하기 쉽게 flex로 지정 */
+    justify-content: space-between; /* 하위에 자식 태그가 2개 있을 때, 각각 왼쪽 끝, 오른쪽 끝에 붙게 된다. */
+    align-items: center;
+    width: 100%;
+}
+header nav ul { /* 메뉴를 가로 한 줄로 배치하기 위함. */
+    display: flex;
+}
+header nav ul li {
+    padding: 10px;
+}
+header button {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    color: white;
+}
+header h1 button {
+    font-size: 2rem;
+    font-weight: bold;
+}
+header nav ul li button {
+    font-size: 1.2rem;
+    color: white;
+}
+
+/* main 영역 */
+main{
+    width:100%;
+    height: 100vh;
+    color: white;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('images/background.jpg') center center; /* 배경색이 이미지를 덮는 효과*/
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+main h4{
+    font-size:2rem;
+}
+main h2{
+    font-size:3.5rem;
+    margin: 2rem 0;
+    letter-spacing: 3px;
+    font-family:'Varela Round', sans-serif; /* 웹 폰트 추가 */
+}
+main p {
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: 1.25rem;
+}
+main button.downlaond{ /* DOWNLOAD CV 버튼 꾸미기 */
+    background-color: transparent;
+    border: 3px solid white;
+    border-radius: 20px;
+    padding: 1rem 2rem;
+    margin-top: 3rem;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+main button.mouse { /* 마우스가 위 아래로 움직이는 애니메이션 구현 */
+    background-color: transparent;
+    border: none;
+    color:white;
+    font-size: 2rem;
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: upDown 1s ease-in-out infinite; /* 1초 간격으로 위 아래로 움직임 */
+    cursor: pointer;
+}
+@keyframes upDown {
+    0% {
+        bottom: 1rem;
+    }
+    50% {
+        bottom: 1.5rem;
+    }
+    100% {
+        bottom: 1rem;
+    }
+}
+/* 메인 화면 텍스트의 끝에 커서가 깜빡이는 것처럼 만들어주기 */
+main h2 span::after {
+    content: "";
+    height: 40px;
+    width: 3px;
+    background-color: #fff;
+    display: inline-block;
+    animation: blink .7s ease-in-out infinite;
+}
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* 섹션 영역 전체 글꼴과 배경색 설정 */
+section {
+    font-family: "Poppins", sans-serif;
+    padding: 5rem 0;
+}
+section:nth-child(2n) {
+    background-color: #f8f8f8;
+}
+section .title {
+    margin-bottom: 3rem;
+}
+section .title h4 {
+    font-size: 1.35rem;
+    color: #ed4848;
+    position: relative;
+}
+section .title h2 {
+    font-size: 3.5rem;
+}
+section .title p {
+    font-size: 1,15rem;
+}
+
+/* float 속성 해제 */
+section .about-self::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+/* 본문 너비 절반 지정 & 왼쪽 배치 */
+section .about-self .left {
+    width: 50%;
+    float: left;
+}
+
+/* 이미지 크기가 부모 영역을 넘지 않도록 부모 영역의 최대 크기로 지정 */
+section .about-self .left img {
+    max-width: 100%;
+}
+
+/* 본문 너비 절반 지정 & 오른쪽 배치 */
+section .about-self .right {
+    width: 50%;
+    float: left;
+    padding: 0 2rem;
+}
+
+/* 본문 오른쪽 h3 태그의 글자 크기와 여백 지정 */
+section .about-self .right h3 {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+}
+
+/* 본문 오른쪽 h3 태그의 strong 태그 색상 강조 */
+section .about-self .right h3 strong {
+    color: #ed4848;
+}
+
+/* 본문 오른쪽 p 태그의 크기와 여백 지정 */
+section .about-self .right p {
+    font-size: 1.15rem;
+    margin: 1rem 0;
+}
+
+/* 본문 오른쪽의 아이콘 폰트 크기와 여백 지정 */
+section .about-self .right .social a {
+    font-size: 2.5rem;
+    margin-right: 0.2rem;
+}
+
+/* float 속성 해제 */
+section .do-me::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* 사각형 크기와 간격, 내부 여백 설정 */
+section .do-me .do-inner {
+    background-color: #fff;
+    width: 30%;
+    padding: 2rem;
+    float: left;
+    margin-right: 5%;
+    cursor: pointer;
+}
+
+/* 마지막 사각형의 외부 여백 설정 */
+section .do-me .do-inner:last-child {
+    margin-right: 0;
+}
+
+/* 아이콘 폰트 크기와 색상 */
+section .do-me .do-inner .icon i {
+    font-size: 2.5rem;
+    color: #ff6a6a;
+}
+
+/* HTML5, CSS3, BootStrap v5.0 텍스트 크기와 간격 */
+section .do-me .do-inner .content h3 {
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+/* 사각형 텍스트 크기 */
+section .do-me .do-inner .content p {
+    font-size: 1.15 rem;
+}
+
+/* do-inner 클래스에 마우스를 올리면 배경색과 텍스트 색상 변경*/
+section .do-me .do-inner:hover{
+    background-color: lightcoral;
+    color: white;
+}
+
+/* do-inner 클래스에 마우스를 올리면 아이콘 폰트 색상 변경 */
+section .do-me .do-inner:hover i{
+    color: white;
+}
+.bg {
+    background: url('./images/background.jpg') center center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 650px;
+}
+
+/* 포트폴리오 영역 */
+/* clear 속성으로 float 속성값 해제*/
+section.portfolio::after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  /* portfolio-inner 사각형 꾸미기 */
+  section.portfolio .portfolio-inner{
+    width: 30%;
+    margin-right: 5%;
+    padding: 1rem 1rem 1.5rem 1rem;
+    float: left;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    margin-bottom: 3rem;
+  }
+
+  /* 3번째마다 margin-right 0 적용 */
+  section.portfolio .portfolio-inner:nth-child(3n){
+     margin-right: 0;
+  }
+
+  /* 이미지의 크기가 부모 요소를 넘지 않도록 100%로 지정 */
+  section.portfolio .portfolio-inner img{
+    width: 100%;
+    display: block;
+  }
+  
+  /* strong 태그 색상과 간격 */
+  section.portfolio .portfolio-inner strong{
+    color: #ff6a6a;
+    margin: 0.5rem 0;
+    display: block;
+  }
+
+  /* h3 태그 색상과 간격 */
+  section.portfolio .portfolio-inner h3{
+    font-size: 1.75rem;
+  }

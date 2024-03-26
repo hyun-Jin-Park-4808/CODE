@@ -11,13 +11,15 @@ a, a:link, a:visited {
 li{
     list-style: none;
 }
-.container { /* container 내 div 태그는 기준 너비를 1140px로 유지하는 역할을 한다. */
-    width: 1140px;
+
+/* 헤더 영역*/
+.container { 
+    width: 1140px; /* container 내 div 태그는 기준 너비를 1140px로 유지하는 역할을 한다. */
     margin: 0 auto; /* 위, 아래는 0, 왼쪽, 오른쪽은 auto로 설정하면 수평 방향에서 중아에 위치 */
 }
 header {
-    position: absolute; /* 스크롤해서 화면을 내리더라도 항상 상단에 헤더 고정하려면 fixed를 해야하지만 부드럽게 보이려면 자바스크립트 필요해서 일단 absolute로 지정 */
-    color:black;
+    position: fixed; 
+    color:white;
     top: 0;
     z-index: 1; /* 스크롤 했을 때 다른 요소 밑에 가려서 안 보이는 일이 없도록 0보다 크게 해줌. */
     width: 100%;
@@ -47,3 +49,4 @@ header h1 button {
 header nav ul li button {
     font-size: 1.2rem;
 }
+
