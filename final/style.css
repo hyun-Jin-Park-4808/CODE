@@ -52,6 +52,18 @@ header nav ul li button {
     font-size: 1.2rem;
     color: white;
 }
+header.active{
+    background-color: rgba(0, 0, 0);
+    animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 /* main 영역 */
 main{
@@ -263,10 +275,10 @@ section.portfolio::after{
     content: "";
     display: block;
     clear: both;
-  }
+}
 
-  /* portfolio-inner 사각형 꾸미기 */
-  section.portfolio .portfolio-inner{
+/* portfolio-inner 사각형 꾸미기 */
+section.portfolio .portfolio-inner{
     width: 30%;
     margin-right: 5%;
     padding: 1rem 1rem 1.5rem 1rem;
@@ -274,27 +286,229 @@ section.portfolio::after{
     background-color: #f8f8f8;
     border: 1px solid #ccc;
     margin-bottom: 3rem;
-  }
+}
 
-  /* 3번째마다 margin-right 0 적용 */
-  section.portfolio .portfolio-inner:nth-child(3n){
-     margin-right: 0;
-  }
+/* 3번째마다 margin-right 0 적용 */
+section.portfolio .portfolio-inner:nth-child(3n){
+    margin-right: 0;
+}
 
-  /* 이미지의 크기가 부모 요소를 넘지 않도록 100%로 지정 */
-  section.portfolio .portfolio-inner img{
+/* 이미지의 크기가 부모 요소를 넘지 않도록 100%로 지정 */
+section.portfolio .portfolio-inner img{
     width: 100%;
     display: block;
-  }
-  
-  /* strong 태그 색상과 간격 */
-  section.portfolio .portfolio-inner strong{
+}
+
+/* strong 태그 색상과 간격 */
+section.portfolio .portfolio-inner strong{
     color: #ff6a6a;
     margin: 0.5rem 0;
     display: block;
-  }
+}
 
-  /* h3 태그 색상과 간격 */
-  section.portfolio .portfolio-inner h3{
+/* h3 태그 색상과 간격 */
+section.portfolio .portfolio-inner h3{
     font-size: 1.75rem;
-  }
+}
+
+/*Contact-with-Me 영역*/
+section.contact .contact-me::after {
+    content: "";
+    display: block;
+    clear: both; /* float 속성 해제 */
+}
+section.contact .contact-me .left {
+    width: 30%; /* 왼쪽 공간 너비 */
+    float: left;
+}
+section.contact .contact-me .right {
+    float: left;
+    width: 65%; /* 오른쪽 공간 너비 */
+    margin-left: 5%; /* 가운데 공간 마진 두기  */
+}
+
+/* 왼쪽 영역 스타일 적용 */
+section.contact .contact-me .left .card { /* 박스 처리 */
+    border: 1px solid #ccc;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.2rem;
+}
+
+section.contact .contact-me .left .card .icon i {
+    font-size: 2rem;
+    margin-right: 15px;
+}
+
+section.contact .contact-me .right {
+    float: left;
+    width: 65%;
+    margin-left: 5%;
+    margin-bottom: 2rem; /* 1rem 은 상대적 길이 단위 */
+    border: 1px solid #ccc;
+    padding: 1rem;
+}
+
+/* form-group 사이 간격 지정 */
+section.contact .contact-me .right .form-group {
+    margin-bottom: 1.2rem;
+}
+
+/* label 태그가 인라인 성격이어서 외부 여백을 적용하기 위해 block으로 변경 */
+section.contact .contact-me .right .form-group label {
+    display: block;
+    margin-bottom: 0.85rem;
+}
+
+/* input 요소 꾸미기 */
+section.contact .contact-me .right .form-group input {
+    padding: 0.625rem;
+    width: 100%;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+/* focus 가상 클래스 선택자로 입력 요소에 커서가 활성화되면 파란색 테두리와 그리자 효과 추가 */
+section.contact .contact-me .right .form-group input:focus {
+    border: 1px solid #719ECE;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+/* textarea 요소 꾸미기 */
+section.contact .contact-me .right .form-group textarea {
+    height: 300px;
+    width: 100%;
+    resize:none;
+    border:1px solid #ccc;
+    border-radius: 10px;
+}
+
+/* textarea 요소에 커서가 활성회가 되면 파란색 테두리와 그림자 효과 추가 */
+section.contact .contact-me .right .form-group textarea:focus {
+    outline: none;
+    border: 1px solid #719ECE;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+/* 버튼 요소 꾸미기 */
+section.contact .contact-me .right button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #f78b00;
+    border: none;
+    color: white;
+}
+
+/* 반응형 코드 작성하기 */
+/* 화면 너비가 1140px 이하일 때 */
+@media screen and (max-width:1140px) {
+    /* 메인 영역 container 기준 너비 변경 */
+    main .container {
+        width: 992px;
+    }
+    /* 섹션 영역 container 기준 너비 변경 -2단으로처리하기 위한 적정 너비 */
+    section .container {
+        width: 600px;
+    }
+    /* About Me 영역 왼쪽 너비 50% -> 100% 변경 */
+    section .about-self .left {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+    /* About Me 영역 오른쪽 너비 50% -> 100% 변경 */
+    section .about-self .right {
+        width: 100%;
+        padding: 0;
+    }
+    /* What I Do 영역 반응형 적용 */
+    section .do-me .do-inner {
+        width: 48%; /* 본문 사각형 너비 30% -> 48% 변경 */
+        margin-bottom: 1.5rem; /* 본문 사각형 사이 간격 지정 */
+        margin-right: 0; /* 외부 여백 초기화 */
+    }
+    section .do-me .do-inner:nth-child(2n + 1) {
+        margin-right: 4%; /* 1, 3, 5, .. 번째 본문 사각형에 적용 */
+    }
+    /*포트폴리오 영역 반응형 적용 */
+    section .portfolio-me .portfolio-inner {
+        width: 48%; /* 본문 사각형 너비 30% -> 48% 변경 */
+        margin-right: 0; /* 외부 여백 초기화 */
+    }
+    section .portfolio-me .portfolio-inner:nth-child(2n + 1) {
+        margin-right: 4%;
+    }
+    /* Contact With Me 영역 반응형 적용 */
+    section.contact .contact-me .left {
+        width: 100%;
+    }
+    section.contact .contact-me .right {
+        width:100%;
+        margin-left: 0;
+    }
+
+}
+
+/* 화면 너비가 992px 이하일 때 */
+@media screen and (max-width:992px) {
+    html {
+        font-size: 14px;
+    }
+    /* 메인 영역 container 기준 너비 변경 */
+    main .container {
+        width: 768px; /* 992px -> 768px */
+    }
+    /*PortFolio 영역 본문 사각형 너비 변경 */
+    section .portfolio-me .portfolio-inner {
+        width:100%;
+    }
+}
+
+/* 화면 너비가 768px 이하일 때 */
+@media screen and (max-width:768px) {
+    html {
+        font-size: 13px;
+    }
+    /* 메인 영역 container 기준 너비 변경 */
+    main .container {
+        width: 576px; /* 768px -> 576px */
+    }
+    section .container {
+        width: 400px;
+    }
+    section .do-me .do-inner {
+        width: 100%;
+        margin-right: 0; /* 외부 여백 초기화 */
+    }
+}
+/* 화면 너비가 576px 이하일 때 */
+@media screen and (max-width:576px) {
+    html {
+        font-size: 12px;
+    }
+    main .container {
+        width: 400px;
+    }
+    section .container {
+        width: 360px;
+    }
+}
+/* 화면 너비가 400px 이하일 때 */
+@media screen and (max-width:400px) {
+    html{
+        font-size: 11px;
+    }
+    main .container {
+        width: 320px;
+    }
+    section .container {
+        width: 320px;
+    }
+    main h4 {
+        font-size: 1.5rem;
+    }
+    section .title h2 {
+        font-size:3rem;
+    }
+}
